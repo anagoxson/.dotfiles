@@ -3,6 +3,8 @@
 
 ## Requied
 
+* need MacOS
+
 * install brew
 ** see: https://brew.sh/index_ja.html
 
