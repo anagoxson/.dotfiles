@@ -9,6 +9,6 @@ linux*)
   ;;
 esac
 
-if [[ ! -n $TMUX ]]; then
+if [[ ! -n $TMUX ]] && [[ $VSCODE_PID == "" ]]; then
     tmux new-session
 fi
