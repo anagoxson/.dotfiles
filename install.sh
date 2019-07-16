@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -x which "brew" ]; then
+    brew install reattach-to-user-namespace
+fi
+
 CUR_DIR=$(cd $(dirname $0) && pwd)
 
 for f in $CUR_DIR/.??*
