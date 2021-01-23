@@ -1,0 +1,32 @@
+# prompt
+PS1="\n[ \D{%Y-%m-%d %H:%M:%S} \u@\h \w \!(\$?) ]\n\$ "
+
+# aliases
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -G"
+  ;;
+linux*)
+  alias ls="ls --color"
+  ;;
+esac
+
+## tmux
+#if [[ ! -n $TMUX ]] && [[ $VSCODE_PID == "" ]]; then
+#    tmux new-session
+#fi
+
+## ssh-agent
+#if [ -f ~/.ssh-agent ]; then
+#  . ~/.ssh-agent
+#fi
+#if [ -z "$SSH_AGENT_PID" ] || ! kill -0 $SSH_AGENT_PID; then
+#  ssh-agent > ~/.ssh-agent
+#  . ~/.ssh-agent
+#fi
+#ssh-add -l >& /dev/null || ssh-add
+
+## anyenv
+#export PATH="$HOME/.anyenv/bin:$PATH"
+#eval "$(anyenv init -)"
+

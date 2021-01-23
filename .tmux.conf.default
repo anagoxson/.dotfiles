@@ -1,0 +1,27 @@
+# key mode
+setw -g mode-key vi
+
+# copy-mode
+bind v copy-mode
+
+unbind -T copy-mode-vi v
+unbind -T copy-mode-vi V
+unbind -T copy-mode-vi C-v
+unbind -T copy-mode-vi y
+unbind -T copy-mode-vi Y
+
+bind -T copy-mode-vi v send-keys -X begin-selection
+bind -T copy-mode-vi V send-keys -X select-line
+bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel -bi"
+
+# mouse
+set-option -g mouse on
+
+# pane
+set -g pane-border-style fg=green,bg=black
+set -g pane-active-border-style fg=green,bg=yellow
+
+# logging
+bind-key H pipe-pane "cat >> $HOME/.tmux/logs/`date +%Y-%m-%d-%H%M%S`.log" \; display-message 'Started logging'
+bind-key h pipe-pane \; display-message 'Ended logging'
