@@ -12,3 +12,4 @@ esac
 if [[ ! -n $TMUX ]] && [[ $VSCODE_PID == "" ]]; then
     tmux new-session
 fi
+
